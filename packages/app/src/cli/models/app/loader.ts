@@ -401,7 +401,7 @@ class AppLoader<TConfig extends AppConfiguration, TModuleSpec extends ExtensionS
     })
     webConfigGlobs.push(`!${joinPath(appDirectory, '**/node_modules/**')}`)
     const allWebTomlPaths = await glob(webConfigGlobs)
-    
+
     // Filter out paths that are ignored by .gitignore
     const webTomlPaths = await filterIgnoredPaths(appDirectory, allWebTomlPaths)
 
@@ -563,7 +563,7 @@ class AppLoader<TConfig extends AppConfiguration, TModuleSpec extends ExtensionS
     })
     extensionConfigPaths.push(`!${joinPath(appDirectory, '**/node_modules/**')}`)
     const allConfigPaths = await glob(extensionConfigPaths)
-    
+
     // Filter out paths that are ignored by .gitignore
     const configPaths = await filterIgnoredPaths(appDirectory, allConfigPaths)
 
